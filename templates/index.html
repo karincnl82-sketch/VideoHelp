@@ -1,0 +1,28 @@
+{% extends "base.html" %}
+{% block content %}
+<section class="hero">
+  <div class="badge">VIDEOHELP</div>
+  <h1>Você quer baixar um vídeo do:</h1>
+  <p class="subtitle">Escolha a plataforma e siga as instruções.</p>
+
+  <div class="cards">
+    <a class="platform-card instagram" href="{{ url_for('instructions', platform='instagram') }}">
+      <span class="icon">◎</span>
+      <strong>Baixar vídeo do Instagram</strong>
+      <span>Ver como copiar o link →</span>
+    </a>
+
+    <a class="platform-card facebook" href="{{ url_for('instructions', platform='facebook') }}">
+      <span class="icon">f</span>
+      <strong>Baixar vídeo do Facebook</strong>
+      <span>Ver como copiar o link →</span>
+    </a>
+
+    <a class="platform-card tiktok" href="{{ url_for('instructions', platform='tiktok') }}">
+      <span class="icon">♪</span>
+      <strong>Baixar vídeo do TikTok</strong>
+      <span>Ver como copiar o link →</span>
+    </a>
+  </div>
+</section>
+{% endblock %}

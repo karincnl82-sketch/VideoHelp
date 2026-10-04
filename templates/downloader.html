@@ -1,0 +1,25 @@
+{% extends "base.html" %}
+{% block content %}
+<section class="page-card">
+  <div class="platform-label {{ platform.color }}">{{ platform.name }}</div>
+  <h1>Cole o link do vídeo</h1>
+  <p class="subtitle">Cole aqui o link público que você copiou.</p>
+
+  <form method="post" class="download-form">
+    <input
+      type="url"
+      name="video_url"
+      placeholder="https://..."
+      required
+      autocomplete="off"
+    >
+    <button class="primary-button" type="submit">Baixar vídeo</button>
+  </form>
+
+  <div class="note">
+    <strong>Importante:</strong> o download acontece pelo navegador. No celular, o arquivo será salvo/aberto conforme as configurações do navegador.
+  </div>
+
+  <a class="back-link" href="{{ url_for('instructions', platform=key) }}">← Voltar às instruções</a>
+</section>
+{% endblock %}
