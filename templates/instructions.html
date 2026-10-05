@@ -1,7 +1,12 @@
 {% extends "base.html" %}
 {% block content %}
 <section class="page-card">
-  <div class="platform-label {{ platform.color }}">{{ platform.name }}</div>
+  {% if key == 'tiktok' %}
+<p style="font-size: 20px; text-align: center; padding: 30px;">
+Estamos com um leve erro técnico nessa opção. Abra o vídeo que você deseja, vá em "Compartilhar" e baixe o vídeo normalmente pela própria opção que o TikTok lhe dará.
+</p>
+{% else %}
+<div class="platform-label {{ platform.color }}">{{ platform.name }}</div>
   <h1>Como copiar o link do vídeo</h1>
   <p class="subtitle">Siga os passos abaixo:</p>
 
@@ -16,5 +21,6 @@
   </a>
 
   <a class="back-link" href="{{ url_for('home') }}">← Voltar</a>
+{% endif %}
 </section>
 {% endblock %}
